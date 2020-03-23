@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <title>JS</title>
+</head>
+
+<body class="bgg">
+    <section>
+        <h2>Native JS App</h2>
+    </section>
+    <div class="container">
+        <div class="card-deck">
+            <div class="card mx-4">
+                <div class="card-body">
+                    <img id="hand" src="../img/hand.png" alt="">
+                    <h3 class="card-title">FizzBuzz</h3>
+                    <a type="button" class="btn btn-dark text-light" onclick="fBuzz()">Play</a>
+                    <script>
+                        function fBuzz(){
+                            function fizzBuzz(num){
+                                var fBuzzState = 0;
+                                if(num % 3 == 0)
+                                fBuzzState = 1;
+                                if(num % 5 == 0)
+                                fBuzzState = 2;
+                                if((num % 3 == 0) && (num % 5 == 0))
+                                fBuzzState = 3;
+                                if(fBuzzState == 0)
+                                return num;
+                                if(fBuzzState == 1)
+                                return "FIZZ";
+                                if(fBuzzState == 2)
+                                return "BUZZ";
+                                if(fBuzzState == 3)
+                                return "FizzBuzz";
+                            }
+                            for(let i=1; i<=100; i++){
+                                if (confirm(fizzBuzz(i)) == true)
+                                continue;
+                                else
+                                break;
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="card mx-4">
+                <div class="card-body">
+                    <img id="soju" src="../img/soju.jpg" alt="">
+                    <h3 class="card-title">The 99 Bottles of Beer</h3>
+                    <a type="button" href="" class="btn btn-dark text-light" onclick="bSong()">Play</a>
+                    <script>
+                        function bSong(){
+                            var word = "bottles";
+                            var count = 99;
+                            while (count > 1){
+                                alert(count + " " + word + " of beer on the wall " + count + " " + word + " of beer. Take one down, pass it around.");
+                                count = count - 1;
+                                if (count > 1){
+                                    alert(count + " " + word + " of beer on the wall.");
+                                } else{
+                                    alert(count + " bottle of beer on the wall.");
+                                }
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+            <div class="card mx-4">
+                <div class="card-body">
+                    <img id="num" src="../img/num.png" alt="">
+                    <h3 class="card-title">Fibonacci Sequence</h3>
+                    <a type="button" class="btn btn-dark text-light" onclick="fSeq()">Play</a>
+                    <script>
+                        function fSeq(){
+                            var x,y,result,temp;
+                            input = prompt("How long would you like your sequence?");
+                            x = 0;
+                            y = 1;
+                            temp = 0;
+                            result;
+
+                            alert(x);
+                            alert(y);
+                            for (result = 3; result <= input; result++)
+                            {
+                                temp = x + y;
+                                x = y;
+                                y = temp;
+                            
+                            alert(temp);
+                            }
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="../js/­jquery-3.3.1.slim.min­.js"></script>
+<script src="../js/­popper.min.js"></script>
+<script src="../js/­bootstrap.min.js"></script>
+</body>
+</html>
