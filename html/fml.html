@@ -75,26 +75,27 @@
                 <div class="card-body">
                     <img id="num" src="../img/num.png" alt="">
                     <h3 class="card-title">Fibonacci Sequence</h3>
+                    <p id="results"></p>
                     <a type="button" class="btn btn-dark text-light" onclick="fSeq()">Play</a>
-                    <script>
+                   <script>
                         function fSeq(){
-                            var x,y,result,temp;
-                            input = prompt("How long would you like your sequence?");
-                            x = 0;
-                            y = 1;
-                            temp = 0;
-                            result;
+                            var n = prompt("How long would you like your sequence?");
+                            document.getElementById("results").innerHTML = fibGen(n);
+                        }
+                        var seq,x,y,temp;
+                        seq = [1];
+                        x = 0;
+                        y = 1;
+                        temp = 0;
 
-                            document.write(x);
-                            document.write(y);
-                            for (result = 3; result <= input; result++)
-                            {
+                        function fibGen(n){
+                            while(seq.length < n){
                                 temp = x + y;
                                 x = y;
                                 y = temp;
-                            
-                            document.write(temp);
+                                seq.push(temp);
                             }
+                            return(seq);
                         }
                     </script>
                 </div>
